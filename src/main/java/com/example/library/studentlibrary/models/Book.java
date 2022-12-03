@@ -2,13 +2,17 @@ package com.example.library.studentlibrary.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
+@Getter
+@Setter
+@AllArgsConstructor
 @Entity
+@ToString
 public class Book {
 
     @Id

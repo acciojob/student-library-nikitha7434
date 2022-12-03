@@ -1,13 +1,17 @@
 package com.example.library.studentlibrary.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
+
+@Data
+@Builder
+@AllArgsConstructor
 @Entity
 public class Author {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -22,9 +26,8 @@ public class Author {
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("author")
     private List<Book> booksWritten;
+public Author(){
 
-    public Author() {
-    }
-
+}
 }
 
